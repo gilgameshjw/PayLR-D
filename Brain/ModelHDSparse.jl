@@ -20,7 +20,7 @@ module HDSparse
         RandomGenerator(dict[:n], dict[:w])
     end
 
-    function composition(vectorHD::Vector{SparseArrays.SparseVector{BITFORMAT,
+    function superposition(vectorHD::Vector{SparseArrays.SparseVector{BITFORMAT,
                                                                     BITFORMAT}})
         idces = unique(vcat(map(v -> v.nzind, vectorHD)...))
         sparsevec(idces, map(i -> BITFORMAT(1), idces))
